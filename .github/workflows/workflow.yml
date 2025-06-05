@@ -34,21 +34,8 @@ jobs:
           cache: 'maven'
           cache-dependency-path: '**/pom.xml'
 
-#<build>
-#  <plugins>
-#    <plugin>
-#      <groupId>org.apache.maven.plugins</groupId>
-#      <artifactId>maven-pmd-plugin</artifactId>
-#      <version>3.26.0</version>
-#      <configuration>
-#        <failOnViolation>true</failOnViolation>
-#      </configuration>
-#    </plugin>
-#  </plugins>
-#</build>
-
-#      - name: 🔍 Run PMD static analysis
-#        run: mvn pmd:check
+      - name: 🔍 Run PMD static analysis
+        run: mvn pmd:check
 
       - name: ⚙️ Build with Maven (skip tests)
         run: mvn clean package -DskipTests
