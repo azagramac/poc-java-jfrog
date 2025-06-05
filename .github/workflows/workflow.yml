@@ -37,7 +37,7 @@ jobs:
       - name: ☕️ Set up env maven
         env:
           JFROG_USERNAME: ${{ secrets.JFROG_USERNAME }}
-          JFROG_TOKEN: ${{ secrets.JFROG_TOKEN_LIBRARY }}
+          JFROG_TOKEN_LIBRARY: ${{ secrets.JFROG_TOKEN_LIBRARY }}
         run: |
           mkdir -p ~/.m2
           cat > ~/.m2/settings.xml <<EOF
