@@ -1,8 +1,8 @@
 package blog.azagra.dev.holamundo;
+import blog.azagra.dev.mensajes.Mensaje;
 
 public class HolaMundo {
-	public static final String SALUDO = "Hola, Mundo!";
-	public String saludar() {
-		return HolaMundo.SALUDO;
-	}
+  public String saludar() {
+    return Mensaje.saludar();
+  }
 }
