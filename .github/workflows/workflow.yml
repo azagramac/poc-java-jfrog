@@ -12,7 +12,7 @@ jobs:
 
     env:
       IMAGE_NAME: my-app
-      JFROG_REPO: pruebas-docker
+      JFROG_REPO: docker-trial
       JFROG_ENDPOINT: trialy6f3zb.jfrog.io
 
     steps:
@@ -32,6 +32,7 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
           cache: 'maven'
+          cache-dependency-path: '**/pom.xml'
 
 #<build>
 #  <plugins>
