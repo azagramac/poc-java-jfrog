@@ -34,6 +34,32 @@ jobs:
           cache: 'maven'
           cache-dependency-path: '**/pom.xml'
 
+      - name: ☕️ Set up env maven
+        env:
+          JFROG_USERNAME: ${{ secrets.JFROG_USERNAME }}
+          JFROG_TOKEN: ${{ secrets.JFROG_TOKEN_LIBRARY }}
+        run: |
+          mkdir -p ~/.m2
+          cat > ~/.m2/settings.xml <<EOF
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
+            <servers>
+              <server>
+                <id>jfrog-release</id>
+                <username>${JFROG_USERNAME}</username>
+                <password>${JFROG_TOKEN_LIBRARY}</password>
+              </server>
+              <server>
+                <id>jfrog-snapshot</id>
+                <username>${JFROG_USERNAME}</username>
+                <password>${JFROG_TOKEN_LIBRARY}</password>
+              </server>
+            </servers>
+          </settings> 
+          EOF
+
       - name: 🔍 Run PMD static analysis
         run: mvn pmd:check
 
