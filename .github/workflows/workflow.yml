@@ -13,6 +13,7 @@ jobs:
     env:
       IMAGE_NAME: my-app
       JFROG_REPO: pruebas
+      JFROG_ENDPOINT: trialy6f3zb.jfrog.io
 
     steps:
       - name: 📦 Checkout code
