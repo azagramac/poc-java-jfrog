@@ -32,7 +32,7 @@
 
   <repositories>
     <repository>
-      <id>jfrog-artifactory</id>
+      <id>jfrog-release</id>
       <url>https://trialy6f3zb.jfrog.io/artifactory/euacc-libs-release-local</url>
     </repository>
   </repositories>
