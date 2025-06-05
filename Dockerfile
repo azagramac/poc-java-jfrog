@@ -4,7 +4,7 @@ RUN addgroup --system appgroup && adduser --system --ingroup appgroup appuser
 
 WORKDIR /app
 
-COPY target/my-app.jar app.jar
+COPY target/hola-mundo-1.0.0.jar app.jar
 
 RUN chown appuser:appgroup app.jar
 
