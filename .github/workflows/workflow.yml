@@ -13,7 +13,7 @@ jobs:
     env:
       IMAGE_NAME: my-app
       JFROG_REPO: docker-trial
-      JFROG_REGISTRY: trialy6f3zb.jfrog.io
+      JFROG_REGISTRY: ${{ secrets.JFROG_REGISTRY }}
 
     steps:
       - name: 📦 Checkout code
@@ -72,7 +72,7 @@ jobs:
       - name: 🔐 Log in to 🐸JFrog Docker Registry
         uses: docker/login-action@v3
         with:
-          registry: ${{ env.JFROG_REGISTRY }}
+          registry: ${JFROG_REGISTRY}
           username: ${{ secrets.JFROG_USERNAME }}
           password: ${{ secrets.JFROG_TOKEN }}
 
