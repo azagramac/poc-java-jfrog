@@ -38,6 +38,7 @@ jobs:
         env:
           JFROG_USERNAME: ${{ secrets.JFROG_USERNAME }}
           JFROG_TOKEN_LIBRARY: ${{ secrets.JFROG_TOKEN_LIBRARY }}
+          JFROG_TOKEN_DESPEDIDA: ${{ secrets.JFROG_TOKEN_DESPEDIDA }}
         run: |
           mkdir -p ~/.m2
           cat > ~/.m2/settings.xml <<EOF
@@ -59,7 +60,7 @@ jobs:
               <server>
                 <id>jfrog-despedida</id>
                 <username>${JFROG_USERNAME}</username>
-                <password>${JFROG_TOKEN_LIBRARY2}</password>
+                <password>${JFROG_TOKEN_DESPEDIDA}</password>
               </server>
             </servers>
           </settings> 
